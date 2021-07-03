@@ -1,0 +1,27 @@
+<section>
+    <div class="container mt-5 p-3">
+        <div class="card">
+            <div class="card-header">
+                Order Details
+            </div>
+           <ul class="list-group list-group-flush">
+                <li class="list-group-item">Order Id : {{order._id}}</li>
+                <li class="list-group-item">Payment Method : {{order.paymentMethod}}</li>
+                <li class="list-group-item">Date of Order: {{order.date}}</li>
+                <li class="list-group-item">Total Amount: {{order.totalAmount}}</li>
+            </ul>
+        </div>
+        <div class="card mt-4">
+            <div class="card-header">
+                User Details
+            </div>
+           <ul class="list-group list-group-flush">
+                <li class="list-group-item">Name : {{order.user.Name}}</li>
+                <li class="list-group-item">Email : {{order.user.Email}}</li>
+                <li class="list-group-item">Address : {{order.deliveryDetails.address}}</li>
+                <li class="list-group-item">Mobile : {{order.deliveryDetails.mobile}}</li>
+                <li class="list-group-item">Pincode : {{order.deliveryDetails.pincode}}</li>
+            </ul>
+        </div>
+    </div>
+</section>

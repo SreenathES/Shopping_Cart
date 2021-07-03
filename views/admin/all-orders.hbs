@@ -1,0 +1,62 @@
+<section>
+  <div class="container-fluid ps-5 pe-5 mt-5">
+    <table class="table mt-5" id="productsTable" style="border-top:solid 2px black">
+      <thead>
+        <tr>
+          <th scope="col">Order Id</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Price/Quantity</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Order Date</th>
+          <th scope="col">Status</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each orders}}
+        <tr>
+          <td><a href="/admin/order-details/{{this._id}}">{{this._id}}</a></td>
+          <td>
+            {{#each this.products}}
+            <table>
+              <tr>
+                <td><a href="/admin/order-products/{{this.item}}">{{this.details.Name}}</a></td>
+              </tr>
+            </table>
+            {{/each}}
+          </td>
+          <td>
+            {{#each this.products}}
+          <table>
+            <tr>
+              <td>{{this.details.Price}}</td>
+            </tr>
+          </table>
+          {{/each}}
+          </td>
+          <td>
+          {{#each this.products}}
+          <table>
+            <tr>
+              <td>{{this.quantity}}</td>
+            </tr>
+          </table>
+          {{/each}}
+        </td>
+          <td>{{this.date}}</td>
+          <td>{{this.status}}</td>
+          <td><a href="" class="btn btn-primary">Dispatch</a></td>
+        </tr>
+        {{/each}}
+
+      </tbody>
+    </table>
+  </div>
+</section>
+<script>
+
+//  $( function () {
+//    $('#productsTable').DataTable();
+//} );
+
+</script>
